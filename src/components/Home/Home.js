@@ -7,9 +7,7 @@ import MovieListing from '../MovieListing/MovieListing'
 function Home() {
     return (
         <div>
-            <Header />
             <MovieListing />
-            <Footer />
         </div>
     )
 }
