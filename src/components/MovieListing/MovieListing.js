@@ -10,7 +10,7 @@ function MovieListing() {
     
     const movies = useSelector((state) => state);
     const dispatch = useDispatch();
-
+   console.log(movies);
    useEffect(() => {
        const fetchMovies = async () => {
            const response = await movieApi.get(`?apiKey=${APIKey}`).catch((err) => {
@@ -21,12 +21,10 @@ function MovieListing() {
        };
        fetchMovies();
    },[]);
-   console.log("Movies",movies)
+   console.log("Movies:",movies)
     return (
      <div>
-         <h1>
              <MovieCard />
-         </h1>
      </div>
     )
 }

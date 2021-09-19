@@ -9,18 +9,25 @@ import {
 import Header from "./components/Header/Header";
 import MovieDetail from "./components/MovieDetails/MovieDetail";
 import Footer from "./components/Footer/Footer";
+import MovieListing from "./components/MovieListing/MovieListing";
+import MovieCard from "./components/MovieCard/MovieCard";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header/>
-        <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/movie/:imdbID" component={MovieDetail} />
-        </Switch>
-        <Footer />
-      </Router>
+   <Router>
+     <Switch>
+       <Route path="/movie/:movieId">
+         <MovieDetail />
+       </Route>
+       <Route path="/">
+         <Header />
+         <MovieListing />
+         <MovieCard />
+         <Footer />
+       </Route>
+     </Switch>
+   </Router>
     </div>
   );
 }

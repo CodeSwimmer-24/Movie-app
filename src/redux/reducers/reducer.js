@@ -4,6 +4,7 @@ const initialState = {
     movies: [],
 }
 
+
 export const movieReducer = (state = initialState,{type,payload}) => {
     
     switch(type){
@@ -11,5 +12,15 @@ export const movieReducer = (state = initialState,{type,payload}) => {
           return{...state, movies: payload}
           default:
               return state;
-    }
-}
+    };
+};
+
+
+export const selectedMovies = (state={},{type,payload}) => {
+    switch(type){
+        case ActionTypes.SELECTED_MOVIES:
+            return{...state,...payload};
+            default:
+            return    state;
+    };
+};
