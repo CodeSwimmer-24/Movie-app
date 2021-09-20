@@ -1,27 +1,14 @@
-import React from 'react';
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
- 
-function MovieCard() {
-    const movies = useSelector((state) => state.allMovies.movies);
-    const renderList = movies.map((movie) => {
-        const {id,title,price,image,rating} = movie;
-         console.log(movie);
-        return(
-            <div className="product-components">
-                <Link to={`/movie/${id}`}>
-                   <div className="four wide column" key ={id}>
-                       <p>{title}</p>
-                   </div>
-                </Link>
-            </div>
-        );
-    });
+import React from 'react'
+
+function MovieCard(props) {
+    const {data} = props;
     return (
-     <div>
-         {renderList}
-         </div>
+        <div className="card__items">
+           <img src={data.Poster} />
+           <h1>{data.Title}</h1>
+        </div>
     )
 }
 
 export default MovieCard
+

@@ -1,32 +1,36 @@
-// import axios from 'axios';
-import React, { useEffect } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
-import { setMovies } from '../../redux/actions/movieAction';
-import movieApi from "../api/fakeApi";
-import {APIKey} from "../api/fakeApiKey";
-import MovieCard from "../MovieCard/MovieCard"
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { getAllMovies } from '../../redux/movies/movieSlice';
+import MovieCard from "../MovieCard/MovieCard";
 
 function MovieListing() {
-    
-    const movies = useSelector((state) => state);
-    const dispatch = useDispatch();
-   console.log(movies);
-   useEffect(() => {
-       const fetchMovies = async () => {
-           const response = await movieApi.get(`?apiKey=${APIKey}`).catch((err) => {
-               console.log("Error",err)
-           });
-          dispatch(setMovies(response.data));
-           console.log("Movies ==>",response)
-       };
-       fetchMovies();
-   },[]);
-   console.log("Movies:",movies)
+
+    const movies = useSelector(getAllMovies);
+
+    // let renderMovies = "";
+
+    // renderMovies = movies.Response === "True" ? (
+    //     movies.Search.map((movie,index) => (
+    //        <MovieCard key={index} data={movie} />
+    //     ))
+    // ) : (
+    // <div>
+    //     <h3>{movies.Error}</h3>
+    // </div>
+    // );
+
     return (
-     <div>
-             <MovieCard />
-     </div>
+       <div className="movie-wrapper">
+           <div className="movie-list">
+               <div className="movie-container">
+               { movies.Search.map((movie,index) => (
+                     <MovieCard key={index} data={movie} />
+                 )) }
+               </div>
+           </div>
+       </div>
     )
 }
 
 export default MovieListing
+
