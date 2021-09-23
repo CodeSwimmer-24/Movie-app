@@ -1,0 +1,9 @@
+.card__items {
+  background-color: #1a242f;
+}
+
+.card__items img {
+  height: 300px;
+  object-fit: contain;
+}
+/*# sourceMappingURL=MovieCard.css.map */

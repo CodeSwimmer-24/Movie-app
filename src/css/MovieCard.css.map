@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAA;EACR,gBAAgB,EAAE,OAAO;CAK5B;;AAND,AAEI,YAFQ,CAER,GAAG,CAAC;EACA,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,OAAO;CACtB",
+    "sources": [
+        "../components/MovieCard/MovieCard.scss"
+    ],
+    "names": [],
+    "file": "MovieCard.css"
+}

@@ -28,6 +28,7 @@ function MovieListing() {
                  )) }
                </div>
            </div>
+           {/* {renderMovies} */}
        </div>
     )
 }
